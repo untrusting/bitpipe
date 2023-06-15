@@ -1,8 +1,11 @@
-var bitpipe = require('../../../index')
+// Import the bitpipe module
+const bitpipe = require('../../../index');
+
+// Start the bitpipe with the specified lambda function
 bitpipe.start({
-  lambda: function(req, payload, pipe) {
-    // append timestamp
-    payload.data[1] += `  [${Date.now()}]`
-    pipe(null, payload)
-  }
-})
+    lambda: function(req, payload, pipe) {
+        // Append timestamp
+        payload.data[1] += ` [${Date.now()}]`;
+        pipe(null, payload);
+    }
+});
